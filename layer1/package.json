@@ -25,7 +25,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "ethereum-waffle": "^3.0.0",
     "ethers": "^5.0.0",
-    "hardhat": "^2.8.0",
+    "hardhat": "^2.9.3",
     "hardhat-gas-reporter": "^1.0.4",
     "prettier": "^2.3.2",
     "prettier-plugin-solidity": "^1.0.0-beta.13",
@@ -41,7 +41,7 @@
     "zksync-web3": "^0.3.4"
   },
   "scripts": {
-    "build": "hardhat compile",
-    "deploy-governance": "hardhat run --network goerli ./scripts/deploy.ts"
+    "compile": "hardhat compile",
+    "deploy": "hardhat run --network goerli ./deploy/deploy.ts"
   }
 }
