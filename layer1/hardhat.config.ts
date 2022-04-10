@@ -2,17 +2,20 @@ import * as dotenv from "dotenv";
 
 import { HardhatUserConfig, task } from "hardhat/config";
 import "@nomiclabs/hardhat-etherscan";
+// * 华夫饼，用于测试智能合约的插件：https://github.com/TrueFiEng/Waffle
 import "@nomiclabs/hardhat-waffle";
+// * typechain用typescript实现，可为智能合约提供完整的类型接口：https://github.com/dethcrypto/TypeChain
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
+// * solidity-coverage 是检测代码（貌似是test code）覆盖率的测试工具：https://github.com/sc-forks/solidity-coverage
 import "solidity-coverage";
 
 const goerli = require('./goerli.json');
 
 dotenv.config();
 
-// This is a sample Hardhat task. To learn how to create your own go to
-// https://hardhat.org/guides/create-task.html
+// * 所有hardhat可以完成的行为都可以被定义成一个task：https://hardhat.org/guides/create-task.html
+// * 每个task都是一个异步函数
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners();
 
