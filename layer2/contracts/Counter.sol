@@ -1,17 +1,17 @@
-//SPDX-License-Identifier: Unlicense
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract Counter {
   uint256 public value = 0;
+
   address public governance;
 
   constructor(address newGovernance) {
-    governance = newGovernance;
+      governance = newGovernance;
   }
 
   function increment() public {
-    require(msg.sender == governance, "Only government addresse is allowed");
-
-    value += 1;
+      require(msg.sender == governance);
+      value += 1;
   }
 }

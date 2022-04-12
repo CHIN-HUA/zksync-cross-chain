@@ -31,17 +31,19 @@
     "prettier-plugin-solidity": "^1.0.0-beta.13",
     "solhint": "^3.3.6",
     "solidity-coverage": "^0.7.16",
-    "ts-node": "^10.1.0",
+    "ts-node": "^10.7.0",
     "typechain": "^5.1.2",
-    "typescript": "^4.5.2"
+    "typescript": "^4.6.3"
   },
   "dependencies": {
+    "@matterlabs/hardhat-zksync-deploy": "^0.1.5",
+    "@matterlabs/hardhat-zksync-solc": "^0.3.0",
     "@matterlabs/zksync-contracts": "^0.1.0",
     "@openzeppelin/contracts": "^4.4.1",
     "zksync-web3": "^0.3.4"
   },
   "scripts": {
-    "compile": "hardhat compile",
-    "deploy": "hardhat run --network goerli ./deploy/deploy.ts"
+    "compile": "yarn hardhat compile",
+    "deploy": "yarn hardhat deploy-zksync"
   }
 }

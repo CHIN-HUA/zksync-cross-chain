@@ -8,3 +8,6 @@ artifacts
 cache
 
 typechain
+
+cache-zk
+artifacts-zk
