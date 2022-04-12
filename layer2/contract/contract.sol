@@ -1,1 +1,17 @@
-// 在L1上部署调用合约
+//SPDX-License-Identifier: Unlicense
+pragma solidity ^0.8.0;
+
+contract Counter {
+  uint256 public value = 0;
+  address public governance;
+
+  constructor(address newGovernance) {
+    governance = newGovernance;
+  }
+
+  function increment() public {
+    require(msg.sender == governance, "Only government addresse is allowed");
+
+    value += 1;
+  }
+}

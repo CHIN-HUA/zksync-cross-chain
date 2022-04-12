@@ -27,7 +27,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 // * hardhat config灵活性很强，可以自己定义：https://hardhat.org/config/
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.4",
+    version: "0.8.0",
     // * hardhat关于编译solidity的相关设置，详细设置见：https://docs.soliditylang.org/en/v0.7.4/using-the-compiler.html#input-description
     settings: {
       // * 合约gas优化，假设将被调用的次数（run），详细逻辑见：https://docs.soliditylang.org/en/v0.7.4/using-the-compiler.html#input-description
