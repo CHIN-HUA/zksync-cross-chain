@@ -12,15 +12,17 @@ const L2_CONTRACT_ADDRESS = process.env.L2_CONTRACT_ADDRESS;
 // console.log(GOVERNANCE_ADDRESS)
 
 async function main() {
-  // L1 Contract
+  // L1 Contract Provider, for interact with layer1
   const l1Provider = ethers.providers.getDefaultProvider("goerli");
   const wallet = new ethers.Wallet(L2_PRIVATE_KEY, l1Provider);
   const governance = new ethers.Contract(L1_CONTRACT_ADDRESS, GOVERNANCE_ABI, wallet);
 
-  // L2 Contract
+  // L2 Contract Provider, for interact with layer2
   const l2Provider = new Provider("https://zksync2-testnet.zksync.dev");
   const zkSyncAddress = await l2Provider.getMainContractAddress();
   const zkSyncContract = new ethers.Contract(zkSyncAddress, utils.ZKSYNC_MAIN_ABI, wallet);
+
+  // 调用L2的合约，需要L1向L2转一部分费用
 }
 
 main().catch((error) => {
