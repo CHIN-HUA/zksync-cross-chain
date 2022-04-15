@@ -1,0 +1,7 @@
+	
+@startuml
+title construct
+
+[Layer2 increment-method] -> [Layer2 Counter + 1]
+[Layer1 Governance] -> [Layer2 increment-method]
+@enduml
